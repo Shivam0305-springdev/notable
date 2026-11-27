@@ -1,13 +1,13 @@
 services:
-  ollama:
-    image: 'ollama/ollama:latest'
-    ports:
-      - '11434'
+#  ollama:
+#    image: 'ollama/ollama:latest'
+#    ports:
+#      - '11434'
   postgres:
-    image: 'postgres:latest'
+    image: 'postgres:alpine3.24'
     environment:
-      - 'POSTGRES_DB=mydatabase'
+      - 'POSTGRES_DB=notable'
       - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_USER=postgres'
     ports:
-      - '5432'
+      - '5432:5432'
